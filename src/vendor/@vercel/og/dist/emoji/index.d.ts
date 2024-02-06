@@ -3,16 +3,16 @@
  */
 export declare function getIconCode(char: string): string;
 declare const apis: {
-	twemoji: (code: any) => string;
-	openmoji: string;
-	blobmoji: string;
-	noto: string;
-	fluent: (code: any) => string;
-	fluentFlat: (code: any) => string;
+  twemoji: (code: any) => string;
+  openmoji: string;
+  blobmoji: string;
+  noto: string;
+  fluent: (code: any) => string;
+  fluentFlat: (code: any) => string;
 };
 export declare type EmojiType = keyof typeof apis;
 export declare function loadEmoji(
-	code: string,
-	type?: EmojiType,
+  code: string,
+  type?: EmojiType,
 ): Promise<Response>;
 export {};

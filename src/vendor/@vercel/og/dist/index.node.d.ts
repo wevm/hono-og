@@ -1,13 +1,13 @@
 /// <reference types="node" />
 import type { ReactElement } from "react";
 import type {
-	ImageResponseNodeOptions,
-	ImageResponseOptions,
-	FigmaImageResponseProps,
+  ImageResponseNodeOptions,
+  ImageResponseOptions,
+  FigmaImageResponseProps,
 } from "./types";
 import { Readable } from "stream";
 export declare class ImageResponse extends Response {
-	constructor(element: ReactElement, options?: ImageResponseOptions);
+  constructor(element: ReactElement, options?: ImageResponseOptions);
 }
 /**
  * Creates a pipeable stream of the rendered image in a lambda function.
@@ -27,10 +27,10 @@ export declare class ImageResponse extends Response {
  * ```
  */
 export declare function unstable_createNodejsStream(
-	element: ReactElement,
-	options?: Omit<ImageResponseNodeOptions, "status" | "statusText" | "headers">,
+  element: ReactElement,
+  options?: Omit<ImageResponseNodeOptions, "status" | "statusText" | "headers">,
 ): Promise<Readable>;
 export declare const experimental_FigmaImageResponse: (
-	props: FigmaImageResponseProps,
+  props: FigmaImageResponseProps,
 ) => Promise<import("./index.edge").ImageResponse>;
 export declare type NodeImageResponse = typeof ImageResponse;
