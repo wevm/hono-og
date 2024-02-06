@@ -1,0 +1,13 @@
+{
+	"name": "example",
+	"scripts": {
+		"dev": "bun run --hot src/index.tsx"
+	},
+	"dependencies": {
+		"hono": "^3.12.8",
+		"hono-og": "workspace:*"
+	},
+	"devDependencies": {
+		"@types/bun": "latest"
+	}
+}

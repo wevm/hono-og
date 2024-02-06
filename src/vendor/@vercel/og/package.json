@@ -1,0 +1,73 @@
+{
+  "name": "@vercel/og",
+  "version": "0.6.2",
+  "description": "Generate Open Graph Images dynamically from HTML/CSS without a browser",
+  "type": "module",
+  "main": "./dist/index.node.js",
+  "types": "./dist/index.node.d.ts",
+  "files": [
+    "dist/**/*"
+  ],
+  "exports": {
+    ".": {
+      "bun": {
+        "types": "./dist/index.node.d.ts",
+        "default": "./dist/index.node.js"
+      },
+      "edge": {
+        "types": "./dist/index.edge.d.ts",
+        "default": "./dist/index.edge.js"
+      },
+      "edge-light": {
+        "types": "./dist/index.edge.d.ts",
+        "default": "./dist/index.edge.js"
+      },
+      "browser": {
+        "types": "./dist/index.edge.d.ts",
+        "default": "./dist/index.edge.js"
+      },
+      "worker": {
+        "types": "./dist/index.edge.d.ts",
+        "default": "./dist/index.edge.js"
+      },
+      "workerd": {
+        "types": "./dist/index.edge.d.ts",
+        "default": "./dist/index.edge.js"
+      },
+      "import": {
+        "types": "./dist/index.node.d.ts",
+        "default": "./dist/index.node.js"
+      },
+      "node": {
+        "types": "./dist/index.node.d.ts",
+        "default": "./dist/index.node.js"
+      },
+      "default": "./dist/index.node.js"
+    },
+    "./package.json": "./package.json"
+  },
+  "scripts": {
+    "build": "tsup && pnpm types && pnpm copy",
+    "types": "tsc --project tsconfig.json",
+    "copy": "node scripts/copy-vendors.js"
+  },
+  "keywords": [
+    "open graph image",
+    "open graph",
+    "og image",
+    "og:image",
+    "social",
+    "card",
+    "image"
+  ],
+  "license": "MPL-2.0",
+  "dependencies": {
+    "@resvg/resvg-wasm": "2.4.0",
+    "satori": "0.10.9",
+    "yoga-wasm-web": "0.3.3"
+  },
+  "packageManager": "pnpm@8.7.6",
+  "engines": {
+    "node": ">=16"
+  }
+}
