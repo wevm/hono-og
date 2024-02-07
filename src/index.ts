@@ -1,4 +1,4 @@
-import * as Og from "@vercel/og";
+import * as Og from "@wevm/vercel-og";
 import type { Child } from "hono/jsx";
 import type { HtmlEscapedString } from "hono/utils/html";
 
