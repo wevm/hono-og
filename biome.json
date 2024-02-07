@@ -1,7 +1,13 @@
 {
   "$schema": "https://biomejs.dev/schemas/1.5.3/schema.json",
   "files": {
-    "ignore": ["tsconfig.json", "tsconfig.*.json"]
+    "ignore": [
+      "coverage",
+      "node_modules",
+      "src/vendor",
+      "tsconfig.json",
+      "tsconfig.*.json"
+    ]
   },
   "organizeImports": {
     "enabled": true
