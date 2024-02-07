@@ -15,6 +15,10 @@ jobs:
   publish-github:
     runs-on: ubuntu-latest
     timeout-minutes: 5
+    permissions:
+      contents: read
+      packages: write
+      id-token: write
     steps:
       - name: Clone repository
         uses: actions/checkout@v4
