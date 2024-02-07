@@ -1,6 +1,6 @@
 {
   "name": "@wevm/vercel-og",
-  "version": "0.6.2",
+  "version": "0.6.2-0",
   "description": "Generate Open Graph Images dynamically from HTML/CSS without a browser",
   "type": "module",
   "main": "./dist/index.node.js",
