@@ -4,7 +4,7 @@
     "ignore": [
       "coverage",
       "node_modules",
-      "src/vendor",
+      "vendor",
       "tsconfig.json",
       "tsconfig.*.json"
     ]
