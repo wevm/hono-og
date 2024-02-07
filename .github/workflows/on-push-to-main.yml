@@ -47,9 +47,6 @@ jobs:
     steps:
       - name: Clone repository
         uses: actions/checkout@v4
-        with:
-          # This makes Actions fetch all Git history so that Changesets can generate changelogs with the correct commits
-          fetch-depth: 0
       
         # needed to publish to GitHub Packages Registry
       - name: Setup Node
@@ -58,12 +55,11 @@ jobs:
           node-version: 'lts/*'
           registry-url: 'https://npm.pkg.github.com'
 
-      - name: 'Update ~/.npmrc'
+      - name: Update ~/.npmrc
         run: |
           echo "//npm.pkg.github.com:_authToken=${{ secrets.GITHUB_TOKEN }}" >> .npmrc
 
-      - name: 'Publish to GitHub Package Registry'
-        working-directory: './typescript-sdk'
+      - name: Publish to GitHub Package Registry
         env:
           NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           # https://docs.npmjs.com/generating-provenance-statements
