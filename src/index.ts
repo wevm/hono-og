@@ -21,7 +21,7 @@ export class ImageResponse extends Og.ImageResponse {
 export const unstable_createNodejsStream = (
   element: HonoElement,
   options?: Parameters<typeof Og.unstable_createNodejsStream>[1],
-) => Og.unstable_createNodejsStream(toReactNode(element), options)
+) => Og.unstable_createNodejsStream(toReactNode(element), options);
 
 export function toReactNode<
   const jsx extends Child,

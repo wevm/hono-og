@@ -110,12 +110,35 @@ describe("ImageResponse", () => {
 });
 
 describe("unstable_createNodejsStream", () => {
-  test("default", () => {
+  test("default", async () => {
     expect(
-      unstable_createNodejsStream(
+      await unstable_createNodejsStream(
         <div style={{ display: "flex" }}>hello world</div>,
       ),
-    ).toMatchInlineSnapshot(`Promise {}`);
+    ).toMatchInlineSnapshot(`
+      Readable {
+        "_events": {
+          "close": undefined,
+          "data": undefined,
+          "end": undefined,
+          "error": undefined,
+          "readable": undefined,
+        },
+        "_maxListeners": undefined,
+        "_read": [Function],
+        "_readableState": ReadableState {
+          "awaitDrainWriters": null,
+          "buffer": [],
+          "bufferIndex": 0,
+          "highWaterMark": 16,
+          "length": 0,
+          "pipes": [],
+          Symbol(kState): 1052941,
+        },
+        Symbol(shapeMode): true,
+        Symbol(kCapture): false,
+      }
+    `);
   });
 });
 
