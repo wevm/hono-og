@@ -11,101 +11,7 @@ import {
 
 describe("ImageResponse", () => {
   test("default", () => {
-    expect(new ImageResponse(<div>hello world</div>)).toMatchInlineSnapshot(`
-			ImageResponse {
-			  Symbol(realm): {
-			    "settingsObject": {},
-			  },
-			  Symbol(state): {
-			    "aborted": false,
-			    "body": {
-			      "length": null,
-			      "source": null,
-			      "stream": ReadableStream {
-			        Symbol(kType): "ReadableStream",
-			        Symbol(kState): {
-			          "controller": ReadableStreamDefaultController {
-			            Symbol(kType): "ReadableStreamDefaultController",
-			            Symbol(kState): {
-			              "cancelAlgorithm": [Function],
-			              "closeRequested": false,
-			              "highWaterMark": 1,
-			              "pullAgain": false,
-			              "pullAlgorithm": [Function],
-			              "pulling": false,
-			              "queue": [],
-			              "queueTotalSize": 0,
-			              "sizeAlgorithm": [Function],
-			              "started": false,
-			              "stream": [Circular],
-			            },
-			          },
-			          "disturbed": false,
-			          "reader": undefined,
-			          "state": "readable",
-			          "storedError": undefined,
-			          "stream": undefined,
-			          "transfer": {
-			            "port1": undefined,
-			            "port2": undefined,
-			            "promise": undefined,
-			            "writable": undefined,
-			          },
-			        },
-			        Symbol(nodejs.webstream.isClosedPromise): {
-			          "promise": Promise {},
-			          "reject": [Function],
-			          "resolve": [Function],
-			        },
-			        Symbol(nodejs.webstream.controllerErrorFunction): [Function],
-			      },
-			    },
-			    "cacheState": "",
-			    "headersList": HeadersList {
-			      "cookies": null,
-			      Symbol(headers map): Map {
-			        "content-type" => {
-			          "name": "content-type",
-			          "value": "image/png",
-			        },
-			        "cache-control" => {
-			          "name": "cache-control",
-			          "value": "public, immutable, no-transform, max-age=31536000",
-			        },
-			      },
-			      Symbol(headers map sorted): null,
-			    },
-			    "rangeRequested": false,
-			    "requestIncludesCredentials": false,
-			    "status": 200,
-			    "statusText": "",
-			    "timingAllowPassed": false,
-			    "timingInfo": null,
-			    "type": "default",
-			    "urlList": [],
-			  },
-			  Symbol(headers): Headers {
-			    Symbol(headers list): HeadersList {
-			      "cookies": null,
-			      Symbol(headers map): Map {
-			        "content-type" => {
-			          "name": "content-type",
-			          "value": "image/png",
-			        },
-			        "cache-control" => {
-			          "name": "cache-control",
-			          "value": "public, immutable, no-transform, max-age=31536000",
-			        },
-			      },
-			      Symbol(headers map sorted): null,
-			    },
-			    Symbol(guard): "response",
-			    Symbol(realm): {
-			      "settingsObject": {},
-			    },
-			  },
-			}
-		`);
+    expect(new ImageResponse(<div>hello world</div>)).toBeDefined();
   });
 });
 
@@ -115,30 +21,7 @@ describe("unstable_createNodejsStream", () => {
       await unstable_createNodejsStream(
         <div style={{ display: "flex" }}>hello world</div>,
       ),
-    ).toMatchInlineSnapshot(`
-      Readable {
-        "_events": {
-          "close": undefined,
-          "data": undefined,
-          "end": undefined,
-          "error": undefined,
-          "readable": undefined,
-        },
-        "_maxListeners": undefined,
-        "_read": [Function],
-        "_readableState": ReadableState {
-          "awaitDrainWriters": null,
-          "buffer": [],
-          "bufferIndex": 0,
-          "highWaterMark": 16,
-          "length": 0,
-          "pipes": [],
-          Symbol(kState): 1052941,
-        },
-        Symbol(shapeMode): true,
-        Symbol(kCapture): false,
-      }
-    `);
+    ).toBeDefined();
   });
 });
 

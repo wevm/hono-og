@@ -44,6 +44,9 @@ jobs:
     name: Test
     runs-on: ubuntu-latest
     steps:
+      - name: Clone repository
+        uses: actions/checkout@v4
+
       - name: Install dependencies
         uses: ./.github/actions/install-dependencies
 
