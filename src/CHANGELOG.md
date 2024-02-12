@@ -1,5 +1,13 @@
 # hono-og
 
+## 0.0.4
+
+### Patch Changes
+
+- 1922722: Inlined fallback font in `@wevm/vercel-og`.
+- Updated dependencies [1922722]
+  - @wevm/vercel-og@0.6.3
+
 ## 0.0.3
 
 ### Patch Changes
