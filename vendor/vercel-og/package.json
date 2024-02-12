@@ -5,9 +5,7 @@
   "type": "module",
   "main": "./dist/index.node.js",
   "types": "./dist/index.node.d.ts",
-  "files": [
-    "dist/**/*"
-  ],
+  "files": ["dist/**/*"],
   "exports": {
     ".": {
       "bun": {
