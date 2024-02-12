@@ -1,5 +1,11 @@
 # @wevm/vercel-og
 
+## 0.6.4
+
+### Patch Changes
+
+- eefac0e: Fixed output.
+
 ## 0.6.3
 
 ### Patch Changes
