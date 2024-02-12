@@ -1,5 +1,11 @@
 # hono-og
 
+## 0.0.3
+
+### Patch Changes
+
+- bececb7: Added `package.json#exports`
+
 ## 0.0.2
 
 ### Patch Changes
