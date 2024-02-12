@@ -5,6 +5,12 @@
   "module": "lib/index.js",
   "types": "lib/index.d.ts",
   "typings": "lib/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./lib/index.d.ts",
+      "default": "./lib/index.js"
+    }
+  },
   "sideEffects": false,
   "peerDependencies": {
     "hono": "^3"
