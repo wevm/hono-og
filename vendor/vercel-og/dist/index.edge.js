@@ -26891,7 +26891,7 @@ function charCodeToBase16(char) {
     return char - (charCodeMap.a - 10)
   return undefined
 }
-function hexToBytes(hex: Hex, opts: HexToBytesOpts = {}): ByteArray {
+function hexToBytes(hex, opts = {}) {
   const length = hex.length / 2
   const bytes = new Uint8Array(length)
   for (let index = 0, j = 0; index < length; index++) {
