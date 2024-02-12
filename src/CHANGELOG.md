@@ -1,5 +1,13 @@
 # hono-og
 
+## 0.0.5
+
+### Patch Changes
+
+- eefac0e: Fixed output.
+- Updated dependencies [eefac0e]
+  - @wevm/vercel-og@0.6.4
+
 ## 0.0.4
 
 ### Patch Changes
