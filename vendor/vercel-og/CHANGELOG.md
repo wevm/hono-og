@@ -1,5 +1,11 @@
 # @wevm/vercel-og
 
+## 0.6.6
+
+### Patch Changes
+
+- 6a397c3: Fixed build.
+
 ## 0.6.4
 
 ### Patch Changes
