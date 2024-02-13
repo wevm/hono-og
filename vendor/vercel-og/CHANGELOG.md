@@ -1,5 +1,11 @@
 # @wevm/vercel-og
 
+## 0.6.5
+
+### Patch Changes
+
+- c2638da: Fixed `@wevm/vercel-og` package
+
 ## 0.6.4
 
 ### Patch Changes
