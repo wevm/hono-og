@@ -1,5 +1,13 @@
 # hono-og
 
+## 0.0.7
+
+### Patch Changes
+
+- c2638da: Fixed `@wevm/vercel-og` package
+- Updated dependencies [c2638da]
+  - @wevm/vercel-og@0.6.5
+
 ## 0.0.6
 
 ### Patch Changes
