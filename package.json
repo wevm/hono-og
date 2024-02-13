@@ -1,13 +1,16 @@
 {
   "workspaces": ["src", "example", "vendor/*"],
   "scripts": {
-    "build": "bun run clean && tsc --project ./tsconfig.build.json",
+    "build": "bun run clean && bun run build:cjs && bun run build:esm",
+    "build:cjs": "tsc --project ./tsconfig.build.json --module commonjs --moduleResolution node --outDir ./src/cjs --removeComments --verbatimModuleSyntax false && printf '{\"type\":\"commonjs\"}' > ./src/cjs/package.json",
+    "build:esm": "tsc --project ./tsconfig.build.json --declaration --declarationMap --outDir ./src/lib && printf '{\"type\": \"module\",\"sideEffects\":false}' > ./src/lib/package.json",
     "changeset": "changeset",
-    "changeset:release": "bun run build && changeset publish",
+    "changeset:release": "bun run build && bun run prepublishOnly && changeset publish",
     "changeset:version": "changeset version && bun install --lockfile-only",
-    "clean": "rimraf src/index.js src/lib src/tsconfig.build.tsbuildinfo",
+    "clean": "rimraf src/cjs src/lib src/tsconfig.build.tsbuildinfo",
     "format": "biome format . --write",
     "lint": "biome check . --apply",
+    "prepublishOnly": "bun .scripts/prepublishOnly.ts",
     "test": "vitest",
     "typecheck": "tsc --noEmit"
   },

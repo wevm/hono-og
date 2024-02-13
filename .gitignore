@@ -1,6 +1,7 @@
 *.map
 coverage
 lib
+cjs
 node_modules
 tsconfig.*.tsbuildinfo
 tsconfig.tsbuildinfo

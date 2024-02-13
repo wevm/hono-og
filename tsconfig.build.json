@@ -9,10 +9,7 @@
     "src/**/*.test-d.tsx"
   ],
   "compilerOptions": {
-    "declaration": true,
-    "declarationMap": true,
     "sourceMap": true,
-    "outDir": "./src/lib",
     "rootDir": "./src"
   }
 }

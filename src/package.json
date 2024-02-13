@@ -2,13 +2,15 @@
   "name": "hono-og",
   "version": "0.0.5",
   "type": "module",
+  "main": "cjs/index.js",
   "module": "lib/index.js",
   "types": "lib/index.d.ts",
   "typings": "lib/index.d.ts",
   "exports": {
     ".": {
       "types": "./lib/index.d.ts",
-      "default": "./lib/index.js"
+      "import": "./lib/index.js",
+      "default": "./cjs/index.js"
     }
   },
   "sideEffects": false,
