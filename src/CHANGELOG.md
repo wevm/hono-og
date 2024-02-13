@@ -1,5 +1,11 @@
 # hono-og
 
+## 0.0.6
+
+### Patch Changes
+
+- 0663de9: Added support for CommonJS.
+
 ## 0.0.5
 
 ### Patch Changes
