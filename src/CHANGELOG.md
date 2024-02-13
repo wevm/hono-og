@@ -1,5 +1,13 @@
 # hono-og
 
+## 0.0.8
+
+### Patch Changes
+
+- 6a397c3: Fixed build.
+- Updated dependencies [6a397c3]
+  - @wevm/vercel-og@0.6.6
+
 ## 0.0.5
 
 ### Patch Changes
