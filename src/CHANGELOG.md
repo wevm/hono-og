@@ -1,5 +1,13 @@
 # hono-og
 
+## 0.0.9
+
+### Patch Changes
+
+- 0c0d897: Inlined font for Node.js runtime.
+- Updated dependencies [0c0d897]
+  - @wevm/vercel-og@0.6.7
+
 ## 0.0.8
 
 ### Patch Changes
