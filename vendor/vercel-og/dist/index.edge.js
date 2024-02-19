@@ -26881,32 +26881,30 @@ const charCodeMap = {
   F: 70,
   a: 97,
   f: 102,
-}
+};
 function charCodeToBase16(char) {
   if (char >= charCodeMap.zero && char <= charCodeMap.nine)
-    return char - charCodeMap.zero
+    return char - charCodeMap.zero;
   if (char >= charCodeMap.A && char <= charCodeMap.F)
-    return char - (charCodeMap.A - 10)
+    return char - (charCodeMap.A - 10);
   if (char >= charCodeMap.a && char <= charCodeMap.f)
-    return char - (charCodeMap.a - 10)
-  return undefined
+    return char - (charCodeMap.a - 10);
+  return undefined;
 }
 function hexToBytes(hex, opts = {}) {
-  const length = hex.length / 2
-  const bytes = new Uint8Array(length)
+  const length = hex.length / 2;
+  const bytes = new Uint8Array(length);
   for (let index = 0, j = 0; index < length; index++) {
-    const nibbleLeft = charCodeToBase16(hex.charCodeAt(j++))
-    const nibbleRight = charCodeToBase16(hex.charCodeAt(j++))
+    const nibbleLeft = charCodeToBase16(hex.charCodeAt(j++));
+    const nibbleRight = charCodeToBase16(hex.charCodeAt(j++));
     if (nibbleLeft === undefined || nibbleRight === undefined) {
       throw new BaseError(
-        `Invalid byte sequence ("${hex[j - 2]}${
-          hex[j - 1]
-        }" in "${hex}").`,
-      )
+        `Invalid byte sequence ("${hex[j - 2]}${hex[j - 1]}" in "${hex}").`,
+      );
     }
-    bytes[index] = nibbleLeft * 16 + nibbleRight
+    bytes[index] = nibbleLeft * 16 + nibbleRight;
   }
-  return bytes
+  return bytes;
 }
 var initializedResvg = initWasm(resvg_wasm);
 var initializedYoga = initYoga(yoga_wasm).then((yoga2) => Rl(yoga2));
@@ -26956,7 +26954,12 @@ var ImageResponse = class extends Response {
 var experimental_FigmaImageResponse = async (props) => {
   return FigmaImageResponse({ ...props, Response: ImageResponse });
 };
-export { ImageResponse, experimental_FigmaImageResponse };
+var unstable_createNodejsStream = async (_, __) => {};
+export {
+  ImageResponse,
+  experimental_FigmaImageResponse,
+  unstable_createNodejsStream,
+};
 /*!
  * escape-html
  * Copyright(c) 2012-2013 TJ Holowaychuk
