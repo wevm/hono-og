@@ -1,5 +1,11 @@
 # hono-og
 
+## 0.0.10
+
+### Patch Changes
+
+- 6da85d3: Fixed version.
+
 ## 0.0.9
 
 ### Patch Changes
