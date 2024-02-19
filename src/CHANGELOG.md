@@ -1,5 +1,13 @@
 # hono-og
 
+## 0.0.11
+
+### Patch Changes
+
+- 5a4597d: Inlined WASM.
+- Updated dependencies [5a4597d]
+  - @wevm/vercel-og@0.6.8
+
 ## 0.0.10
 
 ### Patch Changes
