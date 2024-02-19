@@ -13,7 +13,7 @@
   },
   "sideEffects": false,
   "peerDependencies": {
-    "hono": "^3"
+    "hono": ">=3"
   },
   "dependencies": {
     "@wevm/vercel-og": "~0.6.6"
