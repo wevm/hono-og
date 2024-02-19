@@ -16,6 +16,6 @@
     "hono": ">=3"
   },
   "dependencies": {
-    "@wevm/vercel-og": "~0.6.6"
+    "@wevm/vercel-og": "workspace:*"
   }
 }
