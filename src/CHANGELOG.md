@@ -1,5 +1,13 @@
 # hono-og
 
+## 0.0.12
+
+### Patch Changes
+
+- 7aa7de2: Added `unstable_createNodejsStream` noop
+- Updated dependencies [7aa7de2]
+  - @wevm/vercel-og@0.6.9
+
 ## 0.0.11
 
 ### Patch Changes
