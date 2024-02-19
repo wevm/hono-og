@@ -26971,6 +26971,7 @@ var ImageResponse = class extends Response {
 async function unstable_createNodejsStream(element, options = {}) {
   await initializedYoga;
   await initializedResvg;
+  const fontData = hexToBytes(fallbackFont);
   const fonts = [
     {
       name: "sans serif",
