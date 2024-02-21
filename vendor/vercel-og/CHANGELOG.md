@@ -1,5 +1,11 @@
 # @wevm/vercel-og
 
+## 0.6.11
+
+### Patch Changes
+
+- 9f8f585: Fixed type module resolution.
+
 ## 0.6.10
 
 ### Patch Changes

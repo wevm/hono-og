@@ -1,5 +1,13 @@
 # hono-og
 
+## 0.0.15
+
+### Patch Changes
+
+- 9f8f585: Fixed type module resolution.
+- Updated dependencies [9f8f585]
+  - @wevm/vercel-og@0.6.11
+
 ## 0.0.14
 
 ### Patch Changes

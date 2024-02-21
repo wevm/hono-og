@@ -1,6 +1,6 @@
 {
   "name": "hono-og",
-  "version": "0.0.14",
+  "version": "0.0.15",
   "type": "module",
   "module": "lib/index.js",
   "types": "lib/index.d.ts",
@@ -17,7 +17,7 @@
     "hono": ">=3"
   },
   "dependencies": {
-    "@wevm/vercel-og": "~0.6.10",
+    "@wevm/vercel-og": "~0.6.11",
     "workers-og": "~0.0.20"
   }
 }
