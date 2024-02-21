@@ -1,5 +1,11 @@
 # hono-og
 
+## 0.0.14
+
+### Patch Changes
+
+- 7b02e27: Added support for Cloudflare Workers.
+
 ## 0.0.13
 
 ### Patch Changes
