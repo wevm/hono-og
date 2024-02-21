@@ -2,7 +2,7 @@
 /// <reference types="react" />
 /// <reference types="node" />
 import type { SatoriOptions } from "satori";
-import type { EmojiType } from "./emoji";
+import type { EmojiType } from "./emoji/index.js";
 import type { OutgoingHttpHeader } from "http";
 declare type ImageOptions = {
   /**

@@ -1,5 +1,5 @@
 import type { ReactElement } from "react";
-import type { ImageResponseOptions, FigmaImageResponseProps } from "./types";
+import type { ImageResponseOptions, FigmaImageResponseProps } from "./types.js";
 export declare class ImageResponse extends Response {
   constructor(element: ReactElement, options?: ImageResponseOptions);
 }

@@ -1,11 +1,12 @@
 import * as Og from "@wevm/vercel-og";
 import { type HonoElement, toReactNode } from "./utils.js";
 
+export type ImageResponseOptions = ConstructorParameters<
+  typeof Og.ImageResponse
+>[1];
+
 export class ImageResponse extends Og.ImageResponse {
-  constructor(
-    element: HonoElement,
-    options?: ConstructorParameters<typeof Og.ImageResponse>[1],
-  ) {
+  constructor(element: HonoElement, options?: ImageResponseOptions) {
     super(toReactNode(element), options);
   }
 }
