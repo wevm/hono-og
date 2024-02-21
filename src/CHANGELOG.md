@@ -1,5 +1,13 @@
 # hono-og
 
+## 0.0.13
+
+### Patch Changes
+
+- d568e2d: Inlined WASM in edge module for Cloudflare worker compat.
+- Updated dependencies [d568e2d]
+  - @wevm/vercel-og@0.6.10
+
 ## 0.0.12
 
 ### Patch Changes

@@ -1,5 +1,11 @@
 # @wevm/vercel-og
 
+## 0.6.10
+
+### Patch Changes
+
+- d568e2d: Inlined WASM in edge module for Cloudflare worker compat.
+
 ## 0.6.9
 
 ### Patch Changes
