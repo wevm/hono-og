@@ -8,6 +8,7 @@
   "exports": {
     ".": {
       "types": "./lib/index.d.ts",
+      "worker": "./lib/worker.js",
       "default": "./lib/index.js"
     }
   },
@@ -16,6 +17,7 @@
     "hono": ">=3"
   },
   "dependencies": {
-    "@wevm/vercel-og": "~0.6.10"
+    "@wevm/vercel-og": "~0.6.10",
+    "workers-og": "~0.0.20"
   }
 }
