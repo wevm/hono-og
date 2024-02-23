@@ -96,29 +96,29 @@ describe("toReactNode", () => {
         </div>,
       ),
     ).toMatchInlineSnapshot(`
-			{
-			  "key": null,
-			  "props": {
-			    "children": [
-			      {
-			        "key": null,
-			        "props": {
-			          "children": "hello",
-			        },
-			        "type": "div",
-			      },
-			      {
-			        "key": null,
-			        "props": {
-			          "children": "world",
-			        },
-			        "type": "div",
-			      },
-			    ],
-			  },
-			  "type": "div",
-			}
-		`);
+      {
+        "key": null,
+        "props": {
+          "children": [
+            {
+              "key": null,
+              "props": {
+                "children": "hello",
+              },
+              "type": "div",
+            },
+            {
+              "key": null,
+              "props": {
+                "children": "world",
+              },
+              "type": "div",
+            },
+          ],
+        },
+        "type": "div",
+      }
+    `);
   });
 
   test("array", () => {
@@ -173,5 +173,95 @@ describe("toReactNode", () => {
 			  "type": "div",
 			}
 		`);
+  });
+
+  test("component", () => {
+    function Test() {
+      return (
+        <div
+          className="lol"
+          foo="bar"
+          baz={{ barry: true }}
+          style={{ backgroundColor: "red" }}
+        >
+          ok
+        </div>
+      );
+    }
+    expect(toReactNode(<Test />)).toMatchInlineSnapshot(`
+			{
+			  "key": null,
+			  "props": {
+			    "baz": {
+			      "barry": true,
+			    },
+			    "children": "ok",
+			    "className": "lol",
+			    "foo": "bar",
+			    "style": {
+			      "backgroundColor": "red",
+			    },
+			  },
+			  "type": "div",
+			}
+		`);
+  });
+
+  test("component w/ children + props", () => {
+    function Test({
+      children,
+      style,
+    }: { children: JSX.Element[]; style: object }) {
+      return (
+        <div className="lol" foo="bar" baz={{ barry: true }} style={style}>
+          {children}
+        </div>
+      );
+    }
+    expect(
+      toReactNode(
+        <Test style={{ backgroundColor: "red" }}>
+          <div style={{ backgroundColor: "blue" }}>hello world</div>
+          <div style={{ backgroundColor: "blue" }}>this is me</div>
+        </Test>,
+      ),
+    ).toMatchInlineSnapshot(`
+      {
+        "key": null,
+        "props": {
+          "baz": {
+            "barry": true,
+          },
+          "children": [
+            {
+              "key": null,
+              "props": {
+                "children": "hello world",
+                "style": {
+                  "backgroundColor": "blue",
+                },
+              },
+              "type": "div",
+            },
+            {
+              "key": null,
+              "props": {
+                "children": "this is me",
+                "style": {
+                  "backgroundColor": "blue",
+                },
+              },
+              "type": "div",
+            },
+          ],
+          "className": "lol",
+          "foo": "bar",
+          "style": {
+            "backgroundColor": "red",
+          },
+        },
+        "type": "div",
+      }
+    `);
   });
 });

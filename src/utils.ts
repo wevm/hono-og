@@ -22,7 +22,11 @@ export function toReactNode<
     return jsx.map((child) => toReactNode(child)) as returnType;
   if (typeof jsx === "string") return jsx as returnType;
   if (typeof jsx === "number") return jsx as returnType;
-  if (typeof jsx.tag === "function") return toReactNode(jsx.children); // fragment
+  if (typeof jsx.tag === "function") {
+    const node = jsx.tag({ ...jsx.props, children: jsx.children });
+    if (!node.tag) return toReactNode(jsx.children); // fragment
+    return toReactNode(node); // component
+  }
 
   const { tag, props } = jsx;
 
