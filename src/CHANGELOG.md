@@ -1,5 +1,11 @@
 # hono-og
 
+## 0.0.16
+
+### Patch Changes
+
+- da97cd0: Fixed element composition.
+
 ## 0.0.15
 
 ### Patch Changes
