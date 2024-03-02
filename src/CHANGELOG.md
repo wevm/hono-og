@@ -1,5 +1,11 @@
 # hono-og
 
+## 0.0.17
+
+### Patch Changes
+
+- 7e9b828: Added `bun` export property.
+
 ## 0.0.16
 
 ### Patch Changes
