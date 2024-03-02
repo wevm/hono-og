@@ -8,6 +8,7 @@
   "exports": {
     ".": {
       "types": "./lib/index.d.ts",
+      "bun": "./lib/index.js",
       "worker": "./lib/worker.js",
       "default": "./lib/index.js"
     }
