@@ -1,5 +1,11 @@
 # hono-og
 
+## 0.0.18
+
+### Patch Changes
+
+- 8320723: Migrated back to `@vercel/og`.
+
 ## 0.0.17
 
 ### Patch Changes
