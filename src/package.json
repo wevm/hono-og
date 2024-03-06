@@ -8,7 +8,7 @@
   "exports": {
     ".": {
       "types": "./lib/index.d.ts",
-      "bun": "./lib/index.js",
+      "bun": "./lib/bun.js",
       "worker": "./lib/worker.js",
       "default": "./lib/index.js"
     }
@@ -19,6 +19,7 @@
   },
   "dependencies": {
     "@wevm/vercel-og": "~0.6.11",
+    "@vercel/og": "~0.6.2",
     "workers-og": "~0.0.20"
   }
 }

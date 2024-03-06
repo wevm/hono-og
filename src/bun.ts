@@ -1,4 +1,4 @@
-import * as Og from "@vercel/og";
+import * as Og from "@wevm/vercel-og";
 import { type HonoElement, toReactNode } from "./utils.js";
 
 export type ImageResponseOptions = ConstructorParameters<
