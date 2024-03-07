@@ -9,6 +9,8 @@
     ".": {
       "types": "./lib/index.d.ts",
       "bun": "./lib/bun.js",
+      "edge": "./lib/index.js",
+      "edge-light": "./lib/index.js",
       "worker": "./lib/worker.js",
       "default": "./lib/index.js"
     }
@@ -20,6 +22,7 @@
   "dependencies": {
     "@wevm/vercel-og": "~0.6.11",
     "@vercel/og": "~0.6.2",
+    "next": "^14.1.3",
     "workers-og": "~0.0.20"
   }
 }
