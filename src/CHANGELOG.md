@@ -1,5 +1,11 @@
 # hono-og
 
+## 0.0.19
+
+### Patch Changes
+
+- b80a5a3: Fixed compat issues.
+
 ## 0.0.18
 
 ### Patch Changes
