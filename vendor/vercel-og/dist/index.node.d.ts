@@ -6,6 +6,9 @@ import type {
   FigmaImageResponseProps,
 } from "./types.js";
 import { Readable } from "stream";
+
+export type { ImageResponseOptions };
+
 export declare class ImageResponse extends Response {
   constructor(element: ReactElement, options?: ImageResponseOptions);
 }
