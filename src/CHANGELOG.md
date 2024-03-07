@@ -1,5 +1,11 @@
 # hono-og
 
+## 0.0.21
+
+### Patch Changes
+
+- 7a151f7: Fixed compat.
+
 ## 0.0.20
 
 ### Patch Changes
