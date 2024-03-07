@@ -9,6 +9,8 @@
     ".": {
       "types": "./lib/index.d.ts",
       "bun": "./lib/bun.js",
+      "edge": "./lib/index.js",
+      "edge-light": "./lib/index.js",
       "worker": "./lib/worker.js",
       "default": "./lib/index.js"
     }

@@ -1,21 +1,20 @@
-import * as Og from "@vercel/og";
+import type { ImageResponse as ImageResponseType } from "@vercel/og";
 import { type HonoElement, toReactNode } from "./utils.js";
 
-const pkg = Og;
-
+// Determine what instance of the module to import based on the runtime
+// (Next.js has it's own compiled version of @vercel/og).
 function importModule(): Promise<typeof import("@vercel/og")> {
   return import(
-    (() => {
-      if (typeof process.env.NEXT_RUNTIME === "undefined") return "@vercel/og";
-      if (process.env.NEXT_RUNTIME === "edge")
-        return "next/dist/compiled/@vercel/og/index.edge.js";
-      return "next/dist/compiled/@vercel/og/index.node.js";
-    })()
+    typeof process.env.NEXT_RUNTIME !== "undefined"
+      ? process.env.NEXT_RUNTIME === "edge"
+        ? "next/dist/compiled/@vercel/og/index.edge.js"
+        : "next/dist/compiled/@vercel/og/index.node.js"
+      : "@vercel/og"
   );
 }
 
 export type ImageResponseOptions = ConstructorParameters<
-  typeof Og.ImageResponse
+  typeof ImageResponseType
 >[1];
 
 export class ImageResponse extends Response {
@@ -57,10 +56,14 @@ export class ImageResponse extends Response {
   }
 }
 
-export const unstable_createNodejsStream = (
+export const unstable_createNodejsStream = async (
   element: HonoElement,
-  options?: Parameters<typeof Og.unstable_createNodejsStream>[1],
-) =>
-  "unstable_createNodejsStream" in pkg
-    ? pkg.unstable_createNodejsStream(toReactNode(element), options)
+  options?: Parameters<
+    typeof import("@vercel/og").unstable_createNodejsStream
+  >[1],
+) => {
+  const mod = await importModule();
+  "unstable_createNodejsStream" in mod
+    ? mod.unstable_createNodejsStream(toReactNode(element), options)
     : undefined;
+};
