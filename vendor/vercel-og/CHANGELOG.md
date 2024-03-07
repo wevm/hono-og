@@ -1,5 +1,11 @@
 # @wevm/vercel-og
 
+## 0.6.12
+
+### Patch Changes
+
+- 0483088: Fixed `ImageResponseOptions` export.
+
 ## 0.6.11
 
 ### Patch Changes
