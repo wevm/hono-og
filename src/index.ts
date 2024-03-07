@@ -7,8 +7,8 @@ function importModule(): Promise<typeof import("@vercel/og")> {
   return import(
     typeof process.env.NEXT_RUNTIME !== "undefined"
       ? process.env.NEXT_RUNTIME === "edge"
-        ? "next/dist/compiled/@vercel/og/index.edge.js"
-        : "next/dist/compiled/@vercel/og/index.node.js"
+        ? "./next/dist/compiled/@vercel/og/index.edge.js"
+        : "./next/dist/compiled/@vercel/og/index.node.js"
       : "@vercel/og"
   );
 }
