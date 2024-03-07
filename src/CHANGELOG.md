@@ -1,5 +1,11 @@
 # hono-og
 
+## 0.0.20
+
+### Patch Changes
+
+- 503dd19: Added better Next.js support.
+
 ## 0.0.19
 
 ### Patch Changes
