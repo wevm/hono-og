@@ -1,5 +1,13 @@
 # hono-og
 
+## 0.0.22
+
+### Patch Changes
+
+- 0483088: Fixed `ImageResponseOptions` export.
+- Updated dependencies [0483088]
+  - @wevm/vercel-og@0.6.12
+
 ## 0.0.21
 
 ### Patch Changes
