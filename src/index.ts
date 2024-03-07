@@ -63,7 +63,7 @@ export const unstable_createNodejsStream = async (
   >[1],
 ) => {
   const mod = await importModule();
-  "unstable_createNodejsStream" in mod
+  return "unstable_createNodejsStream" in mod
     ? mod.unstable_createNodejsStream(toReactNode(element), options)
     : undefined;
 };
