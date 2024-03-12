@@ -34,6 +34,7 @@ app.get("/", () => {
         hello hono
       </div>
     </div>,
+    { format: "svg" },
   );
 });
 
