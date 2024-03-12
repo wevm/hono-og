@@ -1,7 +1,7 @@
 {
   "workspaces": ["src", "example"],
   "scripts": {
-    "build": "bun run clean && tsc --project ./tsconfig.build.json",
+    "build": "bun run clean && tsc --project ./tsconfig.build.json && bun .scripts/postbuild.ts",
     "changeset": "changeset",
     "changeset:release": "bun run build && changeset publish",
     "changeset:version": "changeset version && bun install --lockfile-only",

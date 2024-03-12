@@ -4,7 +4,7 @@ import {
 } from "./utils/elementToSvg.js";
 import { initializeWasm } from "./utils/initializeWasm.js";
 import { svgToPng } from "./utils/svgToPng.js";
-import { type HonoElement } from "./utils/toReactNode.js";
+import type { HonoElement } from "./utils/toReactNode.js";
 
 export type ImageResponseOptions = ElementToSvgOptions &
   ConstructorParameters<typeof Response>[1] & {

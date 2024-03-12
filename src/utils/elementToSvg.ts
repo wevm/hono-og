@@ -13,22 +13,24 @@ export async function elementToSvg(
   element: HonoElement,
   options: ElementToSvgOptions = {},
 ) {
-  const { fonts, height = 630, width = 1200 } = options;
+  const {
+    fonts = [
+      {
+        name: "Open Sans",
+        data: await loadGoogleFont({ family: "Open Sans", weight: 600 }),
+        weight: 500,
+        style: "normal",
+      },
+    ],
+    height = 630,
+    width = 1200,
+  } = options;
 
   const svg = await satori(toReactNode(element), {
     ...options,
     width,
     height,
-    fonts: fonts
-      ? fonts
-      : [
-          {
-            name: "Open Sans",
-            data: await loadGoogleFont({ family: "Open Sans", weight: 600 }),
-            weight: 500,
-            style: "normal",
-          },
-        ],
+    fonts,
   });
 
   return svg;
