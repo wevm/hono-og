@@ -1,5 +1,11 @@
 # hono-og
 
+## 0.0.23
+
+### Patch Changes
+
+- 95db657: Migrated from `@vercel/og` to direct Satori + Resvg for non-edge/worker targets.
+
 ## 0.0.22
 
 ### Patch Changes
