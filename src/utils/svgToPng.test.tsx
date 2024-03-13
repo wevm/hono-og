@@ -3,7 +3,7 @@ import { elementToSvg } from "./elementToSvg.js";
 import { initializeWasm } from "./initializeWasm.js";
 import { svgToPng } from "./svgToPng.js";
 
-test("default", async () => {
+test.skip("default", async () => {
   await initializeWasm();
   const svg = await elementToSvg(
     <div

@@ -1,6 +1,7 @@
 {
   "workspaces": ["src", "example"],
   "scripts": {
+    "bench": "vitest bench",
     "build": "bun run clean && tsc --project ./tsconfig.build.json && bun .scripts/postbuild.ts",
     "changeset": "changeset",
     "changeset:release": "bun run build && changeset publish",
