@@ -20,9 +20,9 @@ export async function elementToSvg(
     emoji = "twemoji",
     fonts = [
       {
-        name: "Open Sans",
-        data: await loadGoogleFont({ family: "Open Sans", weight: 600 }),
-        weight: 500,
+        name: "Noto Sans",
+        data: await loadGoogleFont({ family: "Noto Sans", weight: 400 }),
+        weight: 400,
         style: "normal",
       },
     ],

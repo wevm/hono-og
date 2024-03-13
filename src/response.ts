@@ -11,7 +11,7 @@ export type ImageResponseOptions = ElementToSvgOptions &
     format?: "png" | "svg" | undefined;
   };
 
-export class ImageResponse extends Response {
+class ImageResponseBase extends Response {
   constructor(element: HonoElement, options: ImageResponseOptions = {}) {
     const { format, headers = {}, status = 200, statusText } = options;
 
@@ -42,3 +42,9 @@ export class ImageResponse extends Response {
     });
   }
 }
+
+export const ImageResponse = (await (() => {
+  if (process.env.VERCEL_URL)
+    return import("./exports/vercel.js").then((m) => m.ImageResponse);
+  return ImageResponseBase;
+})()) as typeof ImageResponseBase;
