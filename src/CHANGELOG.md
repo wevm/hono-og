@@ -1,5 +1,11 @@
 # hono-og
 
+## 0.0.24
+
+### Patch Changes
+
+- e74b80f: Fixed Next.js support
+
 ## 0.0.23
 
 ### Patch Changes
