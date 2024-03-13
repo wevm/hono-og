@@ -3,7 +3,7 @@
 /** @jsxFrag */
 
 import { describe, expect, test } from "vitest";
-import { ImageResponse, unstable_createNodejsStream } from "./index.js";
+import { ImageResponse, unstable_createNodejsStream } from "./vercel.js";
 
 describe("ImageResponse", () => {
   test("default", () => {

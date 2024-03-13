@@ -2,25 +2,24 @@
 /** @jsxImportSource hono/jsx */
 /** @jsxFrag */
 
-import { describe, expect, test } from "vitest";
-import { toReactNode } from "./utils.js";
+import { expect, test } from "vitest";
+import { toReactNode } from "./toReactNode.js";
 
-describe("toReactNode", () => {
-  test("primitive", () => {
-    expect(toReactNode("hello")).toMatchInlineSnapshot(`
+test("primitive", () => {
+  expect(toReactNode("hello")).toMatchInlineSnapshot(`
       "hello"
     `);
-    expect(toReactNode(1)).toMatchInlineSnapshot("1");
-    expect(toReactNode([1, "hello"])).toMatchInlineSnapshot(`
+  expect(toReactNode(1)).toMatchInlineSnapshot("1");
+  expect(toReactNode([1, "hello"])).toMatchInlineSnapshot(`
 			[
 			  1,
 			  "hello",
 			]
 		`);
-  });
+});
 
-  test("empty", () => {
-    expect(toReactNode(<div />)).toMatchInlineSnapshot(`
+test("empty", () => {
+  expect(toReactNode(<div />)).toMatchInlineSnapshot(`
       {
         "key": null,
         "props": {
@@ -29,10 +28,10 @@ describe("toReactNode", () => {
         "type": "div",
       }
     `);
-  });
+});
 
-  test("children", () => {
-    expect(toReactNode(<div>hello</div>)).toMatchInlineSnapshot(`
+test("children", () => {
+  expect(toReactNode(<div>hello</div>)).toMatchInlineSnapshot(`
 			{
 			  "key": null,
 			  "props": {
@@ -41,18 +40,18 @@ describe("toReactNode", () => {
 			  "type": "div",
 			}
 		`);
-  });
+});
 
-  test("JSX children", () => {
-    expect(
-      toReactNode(
-        <div>
-          <div>hello</div>
-          <div>world</div>
-          <div>{69}</div>
-        </div>,
-      ),
-    ).toMatchInlineSnapshot(`
+test("JSX children", () => {
+  expect(
+    toReactNode(
+      <div>
+        <div>hello</div>
+        <div>world</div>
+        <div>{69}</div>
+      </div>,
+    ),
+  ).toMatchInlineSnapshot(`
 			{
 			  "key": null,
 			  "props": {
@@ -83,19 +82,19 @@ describe("toReactNode", () => {
 			  "type": "div",
 			}
 		`);
-  });
+});
 
-  test("fragment", () => {
-    expect(
-      toReactNode(
-        <div>
-          <>
-            <div>hello</div>
-            <div>world</div>
-          </>
-        </div>,
-      ),
-    ).toMatchInlineSnapshot(`
+test("fragment", () => {
+  expect(
+    toReactNode(
+      <div>
+        <>
+          <div>hello</div>
+          <div>world</div>
+        </>
+      </div>,
+    ),
+  ).toMatchInlineSnapshot(`
       {
         "key": null,
         "props": {
@@ -119,12 +118,12 @@ describe("toReactNode", () => {
         "type": "div",
       }
     `);
-  });
+});
 
-  test("array", () => {
-    expect(
-      toReactNode([<div>hello</div>, <div>world</div>]),
-    ).toMatchInlineSnapshot(`
+test("array", () => {
+  expect(
+    toReactNode([<div>hello</div>, <div>world</div>]),
+  ).toMatchInlineSnapshot(`
 			[
 			  {
 			    "key": null,
@@ -142,21 +141,21 @@ describe("toReactNode", () => {
 			  },
 			]
 		`);
-  });
+});
 
-  test("props", () => {
-    expect(
-      toReactNode(
-        <div
-          className="lol"
-          foo="bar"
-          baz={{ barry: true }}
-          style={{ backgroundColor: "red" }}
-        >
-          ok
-        </div>,
-      ),
-    ).toMatchInlineSnapshot(`
+test("props", () => {
+  expect(
+    toReactNode(
+      <div
+        className="lol"
+        foo="bar"
+        baz={{ barry: true }}
+        style={{ backgroundColor: "red" }}
+      >
+        ok
+      </div>,
+    ),
+  ).toMatchInlineSnapshot(`
 			{
 			  "key": null,
 			  "props": {
@@ -173,22 +172,22 @@ describe("toReactNode", () => {
 			  "type": "div",
 			}
 		`);
-  });
+});
 
-  test("component", () => {
-    function Test() {
-      return (
-        <div
-          className="lol"
-          foo="bar"
-          baz={{ barry: true }}
-          style={{ backgroundColor: "red" }}
-        >
-          ok
-        </div>
-      );
-    }
-    expect(toReactNode(<Test />)).toMatchInlineSnapshot(`
+test("component", () => {
+  function Test() {
+    return (
+      <div
+        className="lol"
+        foo="bar"
+        baz={{ barry: true }}
+        style={{ backgroundColor: "red" }}
+      >
+        ok
+      </div>
+    );
+  }
+  expect(toReactNode(<Test />)).toMatchInlineSnapshot(`
 			{
 			  "key": null,
 			  "props": {
@@ -205,27 +204,27 @@ describe("toReactNode", () => {
 			  "type": "div",
 			}
 		`);
-  });
+});
 
-  test("component w/ children + props", () => {
-    function Test({
-      children,
-      style,
-    }: { children: JSX.Element[]; style: object }) {
-      return (
-        <div className="lol" foo="bar" baz={{ barry: true }} style={style}>
-          {children}
-        </div>
-      );
-    }
-    expect(
-      toReactNode(
-        <Test style={{ backgroundColor: "red" }}>
-          <div style={{ backgroundColor: "blue" }}>hello world</div>
-          <div style={{ backgroundColor: "blue" }}>this is me</div>
-        </Test>,
-      ),
-    ).toMatchInlineSnapshot(`
+test("component w/ children + props", () => {
+  function Test({
+    children,
+    style,
+  }: { children: JSX.Element[]; style: object }) {
+    return (
+      <div className="lol" foo="bar" baz={{ barry: true }} style={style}>
+        {children}
+      </div>
+    );
+  }
+  expect(
+    toReactNode(
+      <Test style={{ backgroundColor: "red" }}>
+        <div style={{ backgroundColor: "blue" }}>hello world</div>
+        <div style={{ backgroundColor: "blue" }}>this is me</div>
+      </Test>,
+    ),
+  ).toMatchInlineSnapshot(`
       {
         "key": null,
         "props": {
@@ -263,5 +262,4 @@ describe("toReactNode", () => {
         "type": "div",
       }
     `);
-  });
 });

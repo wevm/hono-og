@@ -1,6 +1,6 @@
 import * as Og from "workers-og";
-import type { ImageResponseOptions } from "./index.js";
-import { type HonoElement, toReactNode } from "./utils.js";
+import type { ImageResponseOptions } from "../response.js";
+import { type HonoElement, toReactNode } from "../utils/toReactNode.js";
 
 export class ImageResponse extends Og.ImageResponse {
   constructor(element: HonoElement, options?: ImageResponseOptions) {

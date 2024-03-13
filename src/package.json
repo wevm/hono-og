@@ -8,10 +8,10 @@
   "exports": {
     ".": {
       "types": "./lib/index.d.ts",
-      "bun": "./lib/bun.js",
-      "edge": "./lib/index.js",
-      "edge-light": "./lib/index.js",
-      "worker": "./lib/worker.js",
+      "bun": "./lib/index.js",
+      "edge": "./lib/exports/vercel.js",
+      "edge-light": "./lib/exports/vercel.js",
+      "worker": "./lib/exports/worker.js",
       "default": "./lib/index.js"
     }
   },
@@ -20,8 +20,7 @@
     "hono": ">=3"
   },
   "dependencies": {
-    "@wevm/vercel-og": "~0.6.12",
     "@vercel/og": "~0.6.2",
-    "workers-og": "~0.0.20"
+    "workers-og": "~0.0.23"
   }
 }
