@@ -1,12 +1,15 @@
 import type { SatoriOptions } from "satori";
 import satori from "satori/wasm";
 
+import type { Emoji } from "./emoji.js";
+import { loadDynamicAsset } from "./loadDynamicAsset.js";
 import { loadGoogleFont } from "./loadGoogleFont.js";
 import { type HonoElement, toReactNode } from "./toReactNode.js";
 
 export type ElementToSvgOptions = Partial<SatoriOptions> & {
-  width?: number;
-  height?: number;
+  emoji?: Emoji | undefined;
+  width?: number | undefined;
+  height?: number | undefined;
 };
 
 export async function elementToSvg(
@@ -14,6 +17,7 @@ export async function elementToSvg(
   options: ElementToSvgOptions = {},
 ) {
   const {
+    emoji = "twemoji",
     fonts = [
       {
         name: "Open Sans",
@@ -31,6 +35,9 @@ export async function elementToSvg(
     width,
     height,
     fonts,
+    loadAdditionalAsset: (code, text) => {
+      return loadDynamicAsset(emoji, code, text);
+    },
   });
 
   return svg;
