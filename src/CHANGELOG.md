@@ -1,5 +1,11 @@
 # hono-og
 
+## 0.0.26
+
+### Patch Changes
+
+- 869e316: Fixed nullish JSX.
+
 ## 0.0.25
 
 ### Patch Changes
