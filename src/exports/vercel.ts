@@ -4,6 +4,11 @@ import { type HonoElement, toReactNode } from "../utils/toReactNode.js";
 
 const pkg = Og;
 
+export {
+  loadGoogleFont,
+  type LoadGoogleFontParameters,
+} from "../utils/loadGoogleFont.js";
+
 export class ImageResponse extends Og.ImageResponse {
   constructor(element: HonoElement, options?: ImageResponseOptions) {
     super(toReactNode(element), options);
