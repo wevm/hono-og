@@ -18,6 +18,7 @@ export function toReactNode<
 >(jsx_: jsx): returnType {
   const jsx = jsx_ as Exclude<Child, Promise<string>>;
 
+  if (!jsx) return null as returnType;
   if (Array.isArray(jsx))
     return jsx.map((child) => toReactNode(child)) as returnType;
   if (typeof jsx === "string") return jsx as returnType;
