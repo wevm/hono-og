@@ -1,5 +1,12 @@
 # hono-og
 
+## 0.0.27
+
+### Patch Changes
+
+- 1bc7a22: Favored png over svg.
+- c7eaccc: Fixed incorrect italic font style resolution.
+
 ## 0.0.26
 
 ### Patch Changes
