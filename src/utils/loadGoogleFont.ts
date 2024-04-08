@@ -9,15 +9,31 @@ export type LoadGoogleFontParameters = {
   family: string;
   weight?: number;
   text?: string;
+  style?: "normal" | "italic";
 };
 
 export async function loadGoogleFont({
   family,
   weight,
   text,
+  style = "normal",
 }: LoadGoogleFontParameters): Promise<ArrayBuffer> {
+  let fontOptions: string | undefined;
+
+  if (style === "italic") {
+    // If weight is specified, we need to expliticly set the weight to have `1:` fallback
+    if (weight) fontOptions = `ital,wght@1,${weight}`;
+    // If no weight is specified, just append `ital:1` to get italic font.
+    else fontOptions = "ital@1";
+  } else {
+    // If no weight is specified, `fontOptions` should stay empty
+    // If weight is specified, append weight parameter
+    if (weight) fontOptions = `wght@${weight}`;
+  }
   const params: Record<string, string> = {
-    family: `${encodeURIComponent(family)}${weight ? `:wght@${weight}` : ""}`,
+    family: `${encodeURIComponent(family)}${
+      fontOptions ? `:${fontOptions}` : ""
+    }`,
   };
   if (text) params.text = text;
   else params.subset = "latin";
