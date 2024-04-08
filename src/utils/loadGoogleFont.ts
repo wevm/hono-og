@@ -21,20 +21,14 @@ export async function loadGoogleFont({
   let fontOptions: string | undefined;
 
   if (style === "italic") {
-    // If no weight is specified, just append `ital:1` to get italic font.
-    if (!weight) {
-      fontOptions = "ital@1";
-    }
     // If weight is specified, we need to expliticly set the weight to have `1:` fallback
-    else {
-      fontOptions = `ital,wght@1,${weight}`;
-    }
+    if (weight) fontOptions = `ital,wght@1,${weight}`;
+    // If no weight is specified, just append `ital:1` to get italic font.
+    else fontOptions = "ital@1";
   } else {
     // If no weight is specified, `fontOptions` should stay empty
     // If weight is specified, append weight parameter
-    if (weight) {
-      fontOptions = `wght@${weight}`;
-    }
+    if (weight) fontOptions = `wght@${weight}`;
   }
   const params: Record<string, string> = {
     family: `${encodeURIComponent(family)}${
