@@ -17,7 +17,7 @@ export async function svgToPng(svg: string, options: SvgToPngOptions = {}) {
   const pngBuffer = pngData.asPng();
 
   pngData.free();
-  pngBuffer.free();
+  resvg.free()
 
   return pngBuffer;
 }
