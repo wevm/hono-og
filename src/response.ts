@@ -20,9 +20,9 @@ class ImageResponseBase extends Response {
         await initializeWasm();
         const svg = await elementToSvg(element, options);
         const data =
-          format === "png"
-            ? await svgToPng(svg, options)
-            : new TextEncoder().encode(svg);
+          format === "svg"
+            ? new TextEncoder().encode(svg)
+            : await svgToPng(svg, options);
 
         controller.enqueue(data);
         controller.close();
@@ -31,7 +31,7 @@ class ImageResponseBase extends Response {
 
     super(body, {
       headers: {
-        "Content-Type": format === "png" ? "image/png" : "image/svg+xml",
+        "Content-Type": format === "svg" ? "image/svg+xml" : "image/png",
         "Cache-Control": options.debug
           ? "no-cache, no-store"
           : "public, immutable, no-transform, max-age=31536000",
