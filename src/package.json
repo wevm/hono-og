@@ -20,7 +20,7 @@
     "hono": ">=3"
   },
   "dependencies": {
-    "@vercel/og": "~0.6.2",
+    "@vercel/og": "~0.6.3",
     "workers-og": "~0.0.23"
   }
 }
