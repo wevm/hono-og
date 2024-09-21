@@ -20,6 +20,9 @@
   "linter": {
     "enabled": true,
     "rules": {
+      "correctness": {
+        "useJsxKeyInIterable": "off"
+      },
       "recommended": true,
       "style": {
         "noNonNullAssertion": "off"

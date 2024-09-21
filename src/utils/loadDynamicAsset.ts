@@ -1,5 +1,5 @@
 import type { SatoriOptions } from "satori";
-import { apis, getIconCode, loadEmoji } from "./emoji.js";
+import { type apis, getIconCode, loadEmoji } from "./emoji.js";
 import { loadGoogleFont } from "./loadGoogleFont.js";
 
 const languageFontMap = {
