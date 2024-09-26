@@ -1,5 +1,11 @@
 # hono-og
 
+## 0.0.28
+
+### Patch Changes
+
+- 0c898e8: Fixed a memory leak issue that occured in the upstream `@vercel/og` package.
+
 ## 0.0.27
 
 ### Patch Changes
