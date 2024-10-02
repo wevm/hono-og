@@ -1,6 +1,6 @@
 {
   "name": "hono-og",
-  "version": "0.0.28",
+  "version": "0.0.29",
   "type": "module",
   "module": "lib/index.js",
   "types": "lib/index.d.ts",
