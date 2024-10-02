@@ -1,5 +1,11 @@
 # hono-og
 
+## 0.0.29
+
+### Patch Changes
+
+- edd6189: Updated wasm binary of `resvg` to match the one from `@vercel/og@0.6.3`.
+
 ## 0.0.28
 
 ### Patch Changes
